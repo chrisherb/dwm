@@ -71,11 +71,11 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_dark, "-nf", col_bright, "-sb", col_highlight, "-sf", col_dark, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "st", NULL };
 // Volume control commands
-static const char *volup[]   = { "/bin/sh", "-c", "pactl set-sink-volume $(pactl get-default-sink) +5% && /home/chris/dev/dwm/dwm-update.sh", NULL };
-static const char *voldown[] = { "/bin/sh", "-c", "pactl set-sink-volume $(pactl get-default-sink) -5% && /home/chris/dev/dwm/dwm-update.sh", NULL };
-static const char *volmute[] = { "/bin/sh", "-c", "pactl set-sink-mute $(pactl get-default-sink) toggle && /home/chris/dev/dwm/dwm-update.sh", NULL };
+static const char *volup[]   = { "/bin/sh", "-c", "pactl set-sink-volume $(pactl get-default-sink) +5% && /home/chris/dev/suckless/dwm/dwm-update.sh", NULL };
+static const char *voldown[] = { "/bin/sh", "-c", "pactl set-sink-volume $(pactl get-default-sink) -5% && /home/chris/dev/suckless/dwm/dwm-update.sh", NULL };
+static const char *volmute[] = { "/bin/sh", "-c", "pactl set-sink-mute $(pactl get-default-sink) toggle && /home/chris/dev/suckless/dwm/dwm-update.sh", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
