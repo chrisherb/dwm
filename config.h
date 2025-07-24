@@ -37,6 +37,8 @@ static const Rule rules[] = {
 	{ "discord",                NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "TelegramDesktop",        NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "thunderbird-default",    NULL,       NULL,       1 << 6,       0,           -1 },
+
+	{ "Ternar Music Technology-", NULL, NULL, 0, 1,-1}
 };
 
 /* layout(s) */
