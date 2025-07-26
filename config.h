@@ -5,6 +5,11 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int barpadv   = 18;
+static const unsigned int barpadh   = 18;
+static const unsigned int barheight = 0;       /* height of the bar */
+static const unsigned int barborder = 1;	/* border pixel of the bar */
+static const unsigned int floatbar  = 1;        /* 0 means no bar on floating windows */
 static const unsigned int gappx     = 18;
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -19,6 +24,7 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_bright, col_dark, col_mid },
 	[SchemeSel]  = { col_dark, col_highlight,  col_highlight  },
+	[SchemeBar]  = { NULL, NULL, col_highlight }, /* bar colors */
 };
 
 /* tagging */
@@ -30,16 +36,17 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                    instance    title       tags mask     isfloating   monitor */
-	{ "librewolf",              NULL,       NULL,       1 << 0,       0,           -1 },
-	{ "com.bitwig.BitwigStudio",NULL,       NULL,       1 << 2,       0,           -1 },
-	{ "Gimp",                   NULL,       NULL,       1 << 3,       0,           -1 },
-	{ "Inkscape",               NULL,       NULL,       1 << 3,       0,           -1 },
-	{ "qemu-system-x86_64",     NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "steam",                  NULL,       NULL,       1 << 5,       0,           -1 },
-	{ "discord",                NULL,       NULL,       1 << 6,       0,           -1 },
-	{ "TelegramDesktop",        NULL,       NULL,       1 << 6,       0,           -1 },
-	{ "thunderbird-default",    NULL,       NULL,       1 << 6,       0,           -1 },
+	/* class                    instance    title       tags mask     isfloating   monitor		border width */
+	{ "librewolf",              NULL,       NULL,       1 << 0,       0,           -1,		-1 },
+	{ "com.bitwig.BitwigStudio",NULL,       NULL,       1 << 2,       0,           -1,		-1 },
+	{ "Gimp",                   NULL,       NULL,       1 << 3,       0,           -1,		-1 },
+	{ "Inkscape",               NULL,       NULL,       1 << 3,       0,           -1,		-1 },
+	{ "qemu-system-x86_64",     NULL,       NULL,       1 << 4,       0,           -1,		-1 },
+	{ "steam",                  NULL,       NULL,       1 << 5,       0,           -1,		-1 },
+	{ "cstrike_linux64",        NULL,       NULL,       1 << 5,       0,           -1,		 0 },
+	{ "discord",                NULL,       NULL,       1 << 6,       0,           -1,		-1 },
+	{ "TelegramDesktop",        NULL,       NULL,       1 << 6,       0,           -1,		-1 },
+	{ "thunderbird-default",    NULL,       NULL,       1 << 6,       0,           -1,		-1 },
 
 	{ "Ternar Music Technology-", NULL, NULL, 0, 1,-1}
 };
