@@ -16,10 +16,10 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack Nerd Font:size=10" };
 static const char dmenufont[]       = "Hack Nerd Font:size=10";
-static const char col_dark[]        = "#1a1b26";
-static const char col_mid[]         = "#565f89";
-static const char col_bright[]      = "#9aa5ce";
-static const char col_highlight[]   = "#73daca";
+static const char col_dark[]        = "#161616";
+static const char col_mid[]         = "#898989";
+static const char col_bright[]      = "#cecece";
+static const char col_highlight[]   = "#8ff0a4";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_bright, col_dark, col_mid },
