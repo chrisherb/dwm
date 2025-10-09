@@ -4,18 +4,18 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int barpadv   = 12;
-static const unsigned int barpadh   = 12;
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int barpadv   = 16;
+static const unsigned int barpadh   = 16;
 static const unsigned int barheight = 0;       /* height of the bar */
-static const unsigned int barborder = 1;	/* border pixel of the bar */
+static const unsigned int barborder = 2;	/* border pixel of the bar */
 static const unsigned int floatbar  = 1;        /* 0 means no bar on floating windows */
-static const unsigned int gappx     = 12;
+static const unsigned int gappx     = 16;
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Hack Nerd Font:size=10" };
-static const char dmenufont[]       = "Hack Nerd Font:size=10";
+static const char *fonts[]          = { "JetBrains Mono:size=13:weight=demibold" };
+static const char dmenufont[]       = "JetBrains Mono:size=13:weight=demibold";
 static const char col_dark[]        = "#161616";
 static const char col_mid[]         = "#898989";
 static const char col_bright[]      = "#cecece";
@@ -37,7 +37,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class                    instance    title       tags mask     isfloating   monitor		border width */
-	{ "librewolf",              NULL,       NULL,       1 << 0,       0,           -1,		-1 },
+//	{ "librewolf",              NULL,       NULL,       1 << 0,       0,           -1,		-1 },
 	{ "com.bitwig.BitwigStudio",NULL,       NULL,       1 << 2,       0,           -1,		-1 },
 	{ "Show-splash-gtk",        NULL,       NULL,       1 << 2,       0,           -1,		-1 },
 	{ "Gimp",                   NULL,       NULL,       1 << 3,       0,           -1,		-1 },
@@ -102,7 +102,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY,                       XK_space, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[1]} },
@@ -110,7 +110,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
+//	{ MODKEY,                       XK_space,  setlayout,      {0} }, // quits dwm
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscreen,{0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },

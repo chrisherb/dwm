@@ -755,9 +755,8 @@ drawbar(Monitor *m)
 	unsigned int i, occ = 0, urg = 0;
 	Client *c;
 	
-	// Calculate the actual bar width depending on if it's floating
-	int barwidth = floatbar ? (m->ww - 2 * barpadh) : m->ww;
-	
+	int barwidth = m->ww - 2 * barpadh - 2 * barborder;
+
 	if (!m->showbar)
 	    return;
 	
@@ -1923,7 +1922,7 @@ updatebars(void)
 	    if (m->barwin)
 	        continue;
 	    if (floatbar) {
-	        m->barwin = XCreateWindow(dpy, root, barpadh, barpadv, m->ww - 2 * barpadh, bh + barheight, 0, DefaultDepth(dpy, screen),
+	        m->barwin = XCreateWindow(dpy, root, barpadh, barpadv, m->ww - 2 * barpadh - 2 * borderpx, bh + barheight, 0, DefaultDepth(dpy, screen),
 	                                  CopyFromParent, DefaultVisual(dpy, screen),
 	                                  CWOverrideRedirect|CWBackPixmap|CWEventMask, &wa);
 	    		XSetWindowBorder(dpy, m->barwin, scheme[SchemeBar][ColBorder].pixel);
