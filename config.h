@@ -37,10 +37,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class                    instance    title       tags mask     isfloating   monitor		border width */
-//	{ "librewolf",              NULL,       NULL,       1 << 0,       0,           -1,		-1 },
-	{ "com.bitwig.BitwigStudio",NULL,       NULL,       1 << 2,       0,           -1,		-1 },
-	{ "Show-splash-gtk",        NULL,       NULL,       1 << 2,       0,           -1,		-1 },
-   	{ "REAPER",                 NULL,       NULL,       1 << 2,       0,           -1,		-1 },
+	{ "librewolf",              NULL,       NULL,       1 << 0,       0,           -1,		-1 },
+	{ "REAPER",                 NULL,       NULL,       1 << 2,       0,           -1,		-1 },
 	{ "Gimp",                   NULL,       NULL,       1 << 3,       0,           -1,		-1 },
 	{ "Inkscape",               NULL,       NULL,       1 << 3,       0,           -1,		-1 },
 	{ "qemu-system-x86_64",     NULL,       NULL,       1 << 4,       0,           -1,		-1 },
