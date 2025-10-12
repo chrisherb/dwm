@@ -616,7 +616,7 @@ configurerequest(XEvent *e)
 
 	if ((c = wintoclient(ev->window))) {
 		if (ev->value_mask & CWBorderWidth)
-			c->bw = ev->border_width;
+			ev->value_mask &= ~CWBorderWidth; // Ignore client's border width request
 		else if (c->isfloating || !selmon->lt[selmon->sellt]->arrange) {
 			m = c->mon;
 			if (ev->value_mask & CWX) {
@@ -1137,6 +1137,8 @@ manage(Window w, XWindowAttributes *wa)
 	c->mon->sel = c;
 	arrange(c->mon);
 	XMapWindow(dpy, c->win);
+    if (!c->isfullscreen)
+        XSetWindowBorderWidth(dpy, c->win, borderpx);
 	focus(NULL);
 }
 
@@ -1338,6 +1340,9 @@ resize(Client *c, int x, int y, int w, int h, int interact)
 void
 resizeclient(Client *c, int x, int y, int w, int h)
 {
+    if (!c->isfullscreen)
+        c->bw = borderpx;
+
 	XWindowChanges wc;
 
 	c->oldx = c->x; c->x = wc.x = x;
