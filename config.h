@@ -40,6 +40,7 @@ static const Rule rules[] = {
 //	{ "librewolf",              NULL,       NULL,       1 << 0,       0,           -1,		-1 },
 	{ "com.bitwig.BitwigStudio",NULL,       NULL,       1 << 2,       0,           -1,		-1 },
 	{ "Show-splash-gtk",        NULL,       NULL,       1 << 2,       0,           -1,		-1 },
+   	{ "REAPER",                 NULL,       NULL,       1 << 2,       0,           -1,		-1 },
 	{ "Gimp",                   NULL,       NULL,       1 << 3,       0,           -1,		-1 },
 	{ "Inkscape",               NULL,       NULL,       1 << 3,       0,           -1,		-1 },
 	{ "qemu-system-x86_64",     NULL,       NULL,       1 << 4,       0,           -1,		-1 },
@@ -48,8 +49,6 @@ static const Rule rules[] = {
 	{ "discord",                NULL,       NULL,       1 << 6,       0,           -1,		-1 },
 	{ "TelegramDesktop",        NULL,       NULL,       1 << 6,       0,           -1,		-1 },
 	{ "thunderbird-default",    NULL,       NULL,       1 << 6,       0,           -1,		-1 },
-
-	{ "Ternar Music Technology-", NULL, NULL, 0, 1,-1}
 };
 
 /* layout(s) */
