@@ -206,7 +206,6 @@ static void setclientstate(Client *c, long state);
 static void setfocus(Client *c);
 static void setfullscreen(Client *c, int fullscreen);
 static void togglefullscreen(const Arg *arg);
-static void setgaps(const Arg *arg);
 static void setlayout(const Arg *arg);
 static void setmfact(const Arg *arg);
 static void setup(void);
@@ -1137,8 +1136,8 @@ manage(Window w, XWindowAttributes *wa)
 	c->mon->sel = c;
 	arrange(c->mon);
 	XMapWindow(dpy, c->win);
-    if (!c->isfullscreen)
-        XSetWindowBorderWidth(dpy, c->win, borderpx);
+	if (!c->isfullscreen)
+		XSetWindowBorderWidth(dpy, c->win, borderpx);
 	focus(NULL);
 }
 
@@ -1340,8 +1339,8 @@ resize(Client *c, int x, int y, int w, int h, int interact)
 void
 resizeclient(Client *c, int x, int y, int w, int h)
 {
-    if (!c->isfullscreen)
-        c->bw = borderpx;
+	if (!c->isfullscreen)
+		c->bw = borderpx;
 
 	XWindowChanges wc;
 
@@ -1569,16 +1568,6 @@ void
 togglefullscreen(const Arg *arg) {
     if (selmon->sel)
         setfullscreen(selmon->sel, !(selmon->sel->isfullscreen));
-}
-
-void
-setgaps(const Arg *arg)
-{
-	if ((arg->i == 0) || (selmon->gappx + arg->i < 0))
-		selmon->gappx = 0;
-	else
-		selmon->gappx += arg->i;
-	arrange(selmon);
 }
 
 void
